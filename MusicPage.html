@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Music Page</title>
+	  <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/icon" href="images/Logo.png">
+
+
+</head>
+<body>
+<a href="cart.html">
+    <i class="fas fa-shopping-cart"></i> 
+</a>
+  <div class="top-header">
+        <div class="nav-left">
+            <a href="index.html">
+                <img src="images/Logo.png" alt="Logo" class="logo">
+            </a>
+            <span class="logo-text">Pop Market</span>
+        </div>
+        <div class="nav-center">
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+      <div class="nav-right">
+            <a href="CustomerDashboard.html" class="nav-link"><i class="fas fa-user"></i> User</a>
+            <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+        </div>
+    </div>
+
+    <div class="sidenav">
+        <a href="index.html" target="_self"><i class="fas fa-home"></i> Home</a>
+        <!-- Categories with submenu -->
+        <div class="dropdown">
+            <a href="#categories" class="dropdown-btn"><i class="fas fa-list"></i> Categories</a>
+            <div class="dropdown-container">
+                <a href="ElectronicsPage.html">Electronics</a>
+                <a href="BooksPage.html">Books</a>
+                <a href="MusicPage.html">Music</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="mainseller.html" class="dropdown-btn"><i class="fas fa-user-tie"></i> Seller Dashboard</a>
+            <div class="dropdown-container">
+                <a href="addproduct.html">Add New Product</a>
+                <a href="Offers.html">Offers Settings</a>
+            </div>
+        </div>
+    </div>
+    <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li> Category-Music instruments</li>
+      </ul>
+<main>
+
+
+    <div class="category-section">
+        <h1>Music</h1>
+        <div class="sort-bar">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+                <optgroup label="Price">
+                    <option value="low-to-high">Low to High</option>
+                    <option value="high-to-low">High to Low</option>
+                </optgroup>
+                <optgroup label="Name">
+                    <option value="a-z">A to Z</option>
+                    <option value="z-a">Z to A</option>
+                </optgroup>
+                <optgroup label="Rating">
+                    <option value="highest">Highest Rating</option>
+                    <option value="lowest">Lowest Rating</option>
+                </optgroup>
+            </select>
+        </div>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-item">
+            <img class="product-image" src="images/m1.jpg" alt="Piano">
+						 <pre></pre>
+            <p>RockJam 61 Key Keyboard Piano Stand With Pitch Bend Kit, Piano Bench, Headphones</p>
+            <p class="price">1200 SAR</p>
+               <div class="quantity-control">
+            <button class="decrease-qty">-</button>
+            <span class="quantity">1</span>
+            <button class="increase-qty">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      
+        </div>
+
+        <div class="product-item">
+            <img class="product-image" src="images/m2.jpg" alt="Electric Guitar">
+            <p>Electric Guitar Solid Wood Paulownia Body Maple Neck 21 Frets 6 String with Speaker</p>
+            <p class="price">738 SAR</p>
+            <div class="quantity-control">
+            <button class="decrease-qty">-</button>
+            <span class="quantity">1</span>
+            <button class="increase-qty">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+
+        </div>
+
+        <div class="product-item">
+            <img class="product-image" src="images/m3.jpg" alt="Saxophone">
+			 <pre></pre>
+
+            <p>Jean Paul USA Student Tenor Saxophone TS-400 - Golden Brass Lacquered</p>
+            <p class="price">4300 SAR</p>
+             <div class="quantity-control">
+            <button class="decrease-qty">-</button>
+            <span class="quantity">1</span>
+            <button class="increase-qty">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+
+        </div>
+
+        <div class="product-item">
+            <img class="product-image" src="images/m4.jpg" alt="Violin">
+            <p>Natural Acoustic Solid Wood Spruce Flame Maple Veneer Violin</p>
+            <p class="price">250 SAR</p>
+                        <div class="quantity-control">
+            <button class="decrease-qty">-</button>
+            <span class="quantity">1</span>
+            <button class="increase-qty">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+
+        </div>
+
+        <div class="product-item">
+            <img class="product-image" src="images/m5.jpg" alt="Trumpet">
+            <p>Jean Paul USA Trumpet - Standard, Brass (TR-430)</p>
+            <p class="price">1800 SAR</p>
+               <div class="quantity-control">
+            <button class="decrease-qty">-</button>
+            <span class="quantity">1</span>
+            <button class="increase-qty">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+
+        </div>
+		
+		<div class="product-item">
+            <img class="product-image" src="images/m6.jpg" alt="Electric Drum">
+             <p>Alesis Nitro Max Kit Electric Drum Set with Quiet Mesh Pads, 10" Dual Zone Snare, Bluetooth</p>
+            <p class="price">2099 SAR</p>
+            <div class="quantity-control">
+            <button class="decrease-qty">-</button>
+            <span class="quantity">1</span>
+            <button class="increase-qty">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-item">
+					 <pre> </pre>
+
+            <img class="product-image" src="images/m7.jpg" alt="Piano">
+						 <pre></pre>
+
+            <p>RockJam 49 Key Keyboard Piano with Power Supply, Sheet Music Stand</p>
+            <p class="price">340 SAR</p>
+          <div class="quantity-control">
+            <button class="decrease-qty">-</button>
+            <span class="quantity">1</span>
+            <button class="increase-qty">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+
+        </div>
+		
+        <div class="product-item">
+					 <pre> </pre>
+
+            <img class="product-image" src="images/m8.jpg" alt="Xylophone">
+						 <pre></pre>
+
+            <p>32-Note Xylophone Educational Glockenspiel Wooden Base Solid Aluminums </p>
+            <p class="price">280 SAR</p>
+           <div class="quantity-control">
+            <button class="decrease-qty">-</button>
+            <span class="quantity">1</span>
+            <button class="increase-qty">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+
+        </div>
+		
+<div class="product-item">
+            <img class="product-image" src="images/m9.jpg" alt="Oud">
+             <p>Oud musical instrument made by Muhammad Amin</p>
+            <p class="price">380 SAR</p>
+         <div class="quantity-control">
+            <button class="decrease-qty">-</button>
+            <span class="quantity">1</span>
+            <button class="increase-qty">+</button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+
+        </div>
+		
+	
+    </div>
+    
+</main>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>Get to Know Us</h3>
+                <a href="AboutUs.html">About Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Make Money with Us</h3>
+                <a href="mainseller.html">Sell on Pop Market</a>
+                <a href="#partners">Partner with Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Payment Methods</h3>
+                <a href="#credit-cards">Credit Cards</a>
+                <a href="#gift-cards">Gift Cards</a>
+                <a href="#pay">Payment Plans</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:support@popmarket.com">support@popmarket.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="images/Logo.png" alt="Logo" class="footer-logo-img">
+                <span class="logo-text">Pop Market</span>
+            </div>
+            <p>&copy; 2024 Pop Market. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script src="category.js"></script>
+
+
+</body>
+
+</html>

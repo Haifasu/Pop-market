@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="seller.css">
+    <link rel="icon" type="image/icon" href="images/Logo.png">
+    <title>Offers Settings</title>
+</head>
+
+<body>
+    <div class="top-header">
+        <div class="nav-left">
+            <a href="index.html">
+                <img src="images/Logo.png" alt="Logo" class="logo">
+            </a> <span class="logo-text">Pop Market</span>
+        </div>
+        <div class="nav-center">
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="nav-right">
+            <a href="CustomerDashboard.html" class="nav-link"><i class="fas fa-user"></i> User</a>
+            <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+        </div>
+    </div>
+
+    <div class="sidenav">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <!-- Categories with submenu -->
+        <div class="dropdown">
+            <a href="#categories" class="dropdown-btn"><i class="fas fa-list"></i> Categories</a>
+            <div class="dropdown-container">
+                <a href="ElectronicsPage.html">Electronics</a>
+                <a href="BooksPage.html">Books</a>
+                <a href="MusicPage.html">Music</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="mainseller.html" class="dropdown-btn"><i class="fas fa-user-tie"></i> Seller Dashboard</a>
+            <div class="dropdown-container">
+                <a href="addproduct.html">Add New Product</a>
+                <a href="Offers.html">Offers Settings</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content-->>
+    <!--breadcrumbs-->
+    <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mainseller.html">Seller Dashboard</a></li>
+        <li>Offers setting</li>
+    </ul>
+
+
+    <fieldset class="AvailableOffer">
+        <legend class="AO"> Available Offers</legend>
+        <div class="Pcontainer3">
+            <Form class="formFF">
+
+
+                <div class="offerdiv">
+                    <input type="checkbox" class="CheckD" name="O1">
+                    <label> <img src="products/Offer1.png" height="40px" width="35px">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>20% Off , Iphone 15pro-black</label>
+                </div>
+
+                <div class="offerdiv">
+                    <input type="checkbox" class="CheckD" name="O1">
+                    <label> <img src="products/Offer2.png" height="40px" width="40px">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Buy 2 Books & Get 1 free</label>
+                </div>
+
+
+                <div class="offerdiv">
+                    <input type="checkbox" class="CheckD" name="O1">
+                    <label> <img src="products/Offer3.png" height="40px" width="35px">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>15% Off Quitars , including the
+                        accesories </label>
+                </div>
+
+
+
+                <div class="offerdiv">
+                    <input type="checkbox" class="CheckD" name="O1">
+                    <label> <img src="products/book5.jpg" height="40px" width="30px">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>20% Off all books</label>
+                </div>
+
+            </Form>
+        </div>
+            <div class="button-container">
+                <ul>
+                <li><input type="submit" value="Delete Offer" class="clickbutton" style="font-size: 14px;"></li>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <li><input type="reset" value="Cancel" class="clickbutton" style="font-size: 14px;"></li>
+                </ul>
+            </div>
+        
+    </fieldset>
+
+
+    <!--Field set-->
+
+    <fieldset class="addOffer">
+        <legend class="addofferLegend">Add New Offer</legend>
+
+        <div>
+            <form class="Offersform">
+                <ul>
+                    <li>
+                        <div>
+                            <label for="Oname" class="Offerslabels">Offer name:</label>
+                            <input type="text" id="Oname" name="Oname" required>
+                        </div>
+                    </li>
+                    <br>
+
+                    <li>
+                        <div>
+                            <label for="category" class="Offerslabels">Category:</label>
+                            <select name="Category" id="Category" required>
+                                <option value="category1">Electronics</option>
+                                <option value="category2">Books & Comics</option>
+                                <option value="category3">Music Instruments</option>
+                            </select>
+                        </div>
+                    </li>
+                    <br>
+
+                    <li>
+                        <div style="display: flex; gap: 20px;">
+                            <label for="price" class="Offerslabels">New Price:</label>
+                            <input type="number" id="price" name="price" placeholder="$" min="0" required>
+                        </div>
+                    </li>
+                    <br>
+
+                    <li>
+                        <div>
+                            <label for="Oimg" class="Offerslabels">Offer Image:</label>
+                            <input type="file" id="Oimg" required>
+                        </div>
+                    </li>
+                    <br><br>
+
+                    <li>
+                        <div>
+                            <input type="submit" value="Add Offer">
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <input type="reset" value="Cancel">
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </fieldset>
+
+
+    <!-- FOOTER-->>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>Get to Know Us</h3>
+                <a href="AboutUs.html">About Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Make Money with Us</h3>
+                <a href="mainseller.html">Sell on Pop Market</a>
+                <a href="#partners">Partner with Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Payment Methods</h3>
+                <a href="#credit-cards">Credit Cards</a>
+                <a href="#gift-cards">Gift Cards</a>
+                <a href="#pay">Payment Plans</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:support@popmarket.com">support@popmarket.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="images/Logo.png" alt="Logo" class="footer-logo-img">
+                <span class="logo-text">Pop Market</span>
+            </div>
+            <p>&copy; 2024 Pop Market. All rights reserved.</p>
+        </div>
+    </footer>
+<script src="offers.js"></script>
+</body>
+
+</html>

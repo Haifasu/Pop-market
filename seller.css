@@ -1,0 +1,569 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+  margin-top: 7%;
+  margin-left: 280px;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/*--------------add product page  -------------------------------------------------*/
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+fieldset {
+    border: 4px groove #c97ca8;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding:  1px;;
+    max-width: 600px;
+    margin-left: 400px;
+    margin-top: 3%;   
+}
+
+legend {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    background-color:#f4deeb;;
+    font-family: 'Times New Roman', Times, serif ; }
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color:#FAF7F0 ;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    height:  42px ;
+    width: 130px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+   
+}
+
+input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+input[type="reset"] {
+    background-color: #f44336;
+}
+
+input[type="reset"]:hover {
+    background-color: #e51c1c;
+}
+
+/*------------------- Seller dashboard main -------------------------------------------*/
+  /* Base styling for containers */
+.Pcontainer, .Pcontainer2 {
+  display: none;  /* Hide by default */
+  flex-direction: row;
+  border: 4px outset #c97ca8;
+  overflow-x: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: 300px;
+  margin-right: 90px;
+  margin-bottom: 20px;
+  margin-top: 3%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Heading styling */
+h4 {
+  font-weight: 300;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: rgba(241, 185, 232, 0.607);
+  color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Styling for the product box (electronics, music instruments) */
+.box, .boxb {
+  flex: 0 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 0px;
+  border-radius: 10px;
+  width: 130px;
+  height: 200px;
+  box-shadow: 2px 10px 12px rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for product boxes */
+.box:hover, .boxb:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 12px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Styling for the image inside product boxes */
+.pimg {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  padding: 2px;
+}
+
+/* Styling for the product description */
+.description p, .product, .pricee, .quantity {
+  font-family: calibri;
+  font-weight: bold;
+  color: #333;
+  font-size: small;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Font size adjustments for product name */
+.product {
+  font-size: 15px;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Price and quantity styles */
+.pricee {
+  color: green;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.quantity {
+  font-size: 12px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .Pcontainer, .Pcontainer2 {
+      flex-direction: column;
+      align-items: center;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  .box, .boxb {
+      width: 100%;
+      max-width: 200px;
+  }
+}
+
+/* ________________________ Offers Setting page ___________________________*/
+
+/* Offers delete*/
+.AvailableOffer{
+  display: flex;
+    border: 4px groove #c97ca8;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: auto;
+    margin-left: 400px;
+    margin-top: 3%;
+    justify-content: center;
+    padding: 10px; /* Add padding for spacing inside the fieldset */
+}
+.AO{
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  background-color: #f4deeb;
+  font-family: 'Times New Roman', Times, serif ;  
+}
+.Pcontainer3 {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #d1b1c3;
+  overflow-y: auto; 
+  max-height: 350px;
+  width: 100%; /* Ensure it spans the full width of the fieldset */
+  margin: 0; /* Reset margins to fit perfectly */
+  gap: 8px;  
+}
+
+
+/* Style for the offer div to align content */
+.offerdiv {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  gap: 10px; /* Space between checkbox, image, and label */
+  padding: 5px 0;
+  width: 100%; /* Ensure it spans the width of the container */
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Make the checkbox larger */
+.CheckD {
+  transform: scale(1.5); /* Adjust size of the checkbox */
+  margin-right: 10px; /* Space to the right of the checkbox */
+  cursor: pointer; /* Show pointer on hover */
+}
+
+/* Styling for the form buttons */
+.formFF div {
+  display: flex;
+  justify-content: flex-start; /* Align buttons to the left */
+  align-items: center;
+  gap: 20px; /* Space between the buttons */
+  margin-top: 20px; /* Space between offers and buttons */
+}
+
+input[type="submit"], input[type="reset"] {
+  padding: 8px 15px;
+  border: none;
+  background-color: #c97ca8;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Times New Roman', Times, serif; /* Font for both buttons */
+  width: 130px; /* Desired width */
+  height: 40px; /* Desired height */
+  font-weight: bold;
+  font-size: large; /* Desired font size */
+  display: flex;
+  align-items: center; /* Change this if you want them centered vertically */
+  justify-content: center; /* Centers text horizontally */
+}
+
+.formFF div.button-container {
+  display: flex;
+  justify-content: center; /* Align buttons to the center of the container */
+  gap: 20px; /* Space between the buttons */
+  margin-top: 15px; /* Space between offers and buttons */
+  position: sticky; /* Make the buttons sticky */
+  bottom: 10px; /* Position the buttons 10px from the bottom */
+  background-color: #f0f0f0; /* Same background color to blend in */
+  padding: 10px; /* Padding to provide space around the buttons */
+  z-index: 10; /* Ensure it stays above other content */
+  align-items: center; /* Align items vertically */
+  height: fit-content;
+}
+
+
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+  background-color: #a85590;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .Pcontainer3 {
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  .offerdiv {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  input[type="submit"], input[type="reset"] {
+      width: 100%; /* Make buttons full-width on small screens */
+  }
+}
+
+/*-- add offer --*/
+.addOffer {
+  border: 4px groove #c97ca8;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 600px;
+  margin-left: 400px;
+  margin-top: 2%;
+  
+}
+
+.addofferLegend {
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #f4deeb;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.Offersform {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+.Offerslabels {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 19px;
+  text-align: start;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #FAF7F0;
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+/* Hover effect for input fields */
+input[type="text"]:hover,
+input[type="number"]:hover,
+select:hover,
+textarea:hover {
+  border-color: #c97ca8; /* Change border color on hover, no size change */
+}
+
+input[type="submit"],
+input[type="reset"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  height: 42px;
+  width: 130px;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+input[type="reset"] {
+  background-color: #f44336;
+}
+
+input[type="reset"]:hover {
+  background-color: #e51c1c;
+}
+
+/* ________________________ main ___________________________*/
+.SellerOptions{
+  display: flex;
+  margin-left: 300px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  margin-top: 2%;  
+  justify-content: center;
+  gap: 40px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Option{
+  flex: 0 0 auto;
+  position: relative;
+  display: flex; 
+  border: 2px;
+  flex-direction: column;
+  background-color: #eee;
+  padding-top: 2em;
+  border-radius: 5px;
+  width: 180px;
+  height:220px;
+  box-shadow: 2px 10px 12px rgba(147, 147, 147, 0.5) ;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  font-family:'Times New Roman', Times, serif;
+  font-size: 23px;
+  font-weight: 900;
+   
+}
+.Option:hover {
+  transform: scale(1.05); /* Slightly enlarge the box on hover */
+  box-shadow: 4px 12px 15px rgba(63, 63, 63, 0.7); /* Add a stronger shadow */     
+} 
+
+.buttonimg {
+  width: 80px;
+  height: 90px;
+  margin-bottom: 10px; /* Adds a bit of space between image and text */
+}
+
+.Option a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color:#333;
+
+}
+
+
+/*________ Style the container for the list of products ___________*/
+.product-list-container {
+  margin-left: 350px;
+  margin-right: 40px;
+  padding: 20px;
+  border: 5px outset #a85590; /* Big border */
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  max-width: 900px;
+  margin-top: 3px;
+  margin-bottom: 40px;
+}
+
+/* Title for the available products */
+.product-list-container h2 {
+  text-align: center;
+  color: #333;
+  font-weight: bolder;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Style each product card */
+.product-card {
+  display: flex;
+  justify-content: space-between; /* Space out the details */
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #fff;
+}
+
+/* Style for product image */
+.product-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Style for product details (name, price, etc.) */
+.product-card .details {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.product-card .details h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  background-color: #eaeaea;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.product-card .details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Style the price and quantity, aligned in a row */
+.product-card .price-quantity {
+  text-align: right;
+  width: 120px;
+  font-size: 16px;
+}
+
+.product-card .price-quantity p {
+  margin: 0;
+  color: #000;
+}

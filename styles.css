@@ -1,0 +1,1323 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9375em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f4f4f4;
+    z-index: 1000;
+}
+
+/* Logo section */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 2.5em;
+    margin-right: 0.625em;
+}
+
+.logo-text {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1.25em;
+    align-items: center;
+
+}
+
+.nav-link {
+    font-size: 1.0em;
+    text-decoration: none;
+    color: black !important;
+}
+
+.current-week-date {
+    position: relative;
+    top: -1.25em;
+    left: 26.875em;
+    font-size: 0.875em;
+    color: #333;
+}
+
+/* Global Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.625em;
+    background-color: #f4f4f4; /* Background color for the nav */
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.25em;
+}
+
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 48.0em) {
+    .nav-links {
+        display: none; /* Hide links on small screens */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+
+    .nav-links.open {
+        display: flex; /* Show links when hamburger is clicked */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        background-color: #f4f4f4; /* Match nav background */
+        top: 3.75em; /* Position below the header */
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .current-week-date {
+        left: auto; /* Reset left positioning */
+        right: 1.25em; /* Align to the right */
+        top: 0.3125em; /* Adjust top positioning */
+    }
+}
+/* Sidebar Styling */
+.sidenav {
+    position: fixed;
+    top: 3.75em;
+    left: 0;
+    bottom: 0;
+    width: 15.0em;
+    background-color: #888;
+    padding: 1.25em;
+    display: block;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* Sidebar links styling */
+.sidenav a {
+    padding: 0.625em;
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin: 0.3125em 0;
+    box-sizing: border-box;
+}
+
+.sidenav a:hover {
+    background-color: #575757;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Dropdown button (for Categories) styling */
+.dropdown-btn {
+    padding: 0.625em 0.3125em;
+    font-size: 1.0em;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.dropdown-btn:hover {
+    background-color: #888;
+}
+
+/* Submenu container styling */
+.dropdown-container {
+    display: none;
+    width: 105%;
+    background-color: #888;
+    padding-left: 0.625em;
+    box-sizing: border-box;
+}
+
+.dropdown-container a {
+    padding: 0.625em 0.3125em;
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 0.875em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown-container a:hover {
+    background-color: #575757;
+}
+
+/* Hover effect to show submenu */
+.dropdown:hover .dropdown-container {
+    display: block;
+}
+
+/* Centered search bar */
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 0.625em 0.9375em;
+    font-size: 1.0em;
+    border: 0.0625em solid black;
+    border-radius: 0;
+    width: 18.75em;
+    transition: border 0.3s;
+}
+
+.search-input:focus {
+    border: 0.0625em solid black;
+    outline: none;
+    box-shadow: 0 0 0.3125em rgba(59, 59, 59, 0.671);
+}
+
+.search-button {
+    padding: 0.625em 0.9375em;
+    background-color: rgba(57, 57, 57, 0.957);
+    color: white;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.search-button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.search-button i {
+    font-size: 1.0em;
+    color: white;
+}
+
+/* Placeholder styling */
+.search-input::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+/* Banner styles */
+.banner {
+    width: 100%;
+    padding: 0;
+    position: relative;
+    top: 0;
+
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.offer-description {
+    font-size: 1.0em;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-top: 0.5em;
+    line-height: 1.4;
+}
+
+.offers-section h1 {
+    text-align: center;
+    /* Center the text */
+    margin-bottom: 1.25em;
+    text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.3);
+    color: #333;
+}
+
+/* Offer styles */
+.offer {
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+    padding: 0.3125em;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin: 0.0em;
+}
+
+.offer h3 {
+    margin-top: 0.625em;
+    font-size: 1.125em;
+    color: #333;
+}
+
+.offer p {
+    margin: 0.3125em 0;
+    font-size: 0.875em;
+}
+
+.offer:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3);
+}
+
+.offer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.large-offer {
+    flex: 1;
+    max-width: 40%;
+    margin: 0 3.125em;
+}
+
+/* Small offers container */
+.small-offers-container {
+    display: flex;
+    justify-content: flex-start;
+    /* Align to the left */
+    gap: 1.25em;
+    margin-top: 1.25em;
+    margin-left: 1.25em;
+}
+
+.small-offer {
+    flex: 1;
+    max-width: 12.5em;
+    background-color: white;
+    border-radius: 0.5em;
+    padding: 0.9375em;
+    text-align: center;
+    margin-top: 1.25em;
+
+}
+
+.offer img {
+    width: 100%;
+    height: auto;
+}
+
+.offer-image {
+    width: 100%;
+    /* Default for images in all offers */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 0.5em 0.5em 0 0;
+    /* Round the top corners to match the card */
+}
+
+/* Rectangular Offer Card Styling */
+.offer-card-rectangle {
+    background-color: #f9f9f9;
+    border: 0.0625em solid #ddd;
+    border-radius: 0.5em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+    padding: 0.0em;
+    margin-left: 5.9375em;
+    text-align: center;
+    margin: 1.25em auto;
+    width: calc(100% - 2.5em);
+    max-width: 75.0em;
+}
+
+/* Offer Card Hover Effect */
+.offer-card-rectangle:hover {
+    transform: translateY(-0.3125em);
+    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.2);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    width: 100%;
+}
+
+.loadMoreBtn {
+    background-color: white;
+    color: #0056b3;
+    font-weight: bold;
+    padding: 0.625em 1.25em;
+    font-size: 1.0em;
+    border: 0.125em solid #0056b3;
+    border-radius: 1.875em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.loadMoreBtn:hover {
+    color: white;
+    background-color: #0056b3;
+    border-color: #0056b3;
+    /* Change border color on hover */
+}
+
+
+.hidden-offers {
+    display: none;
+}
+
+
+.offer-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+
+
+
+.review-tooltip {
+    position: fixed;
+    left: 0.625em;
+    bottom: 4.375em;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.625em;
+    border-radius: 0.3125em;
+    box-shadow: 0 0.125em 0.625em rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    font-size: 0.8125em;
+}
+
+.review-item {
+    margin-bottom: 0.3125em;
+    /* Space between reviews */
+}
+
+
+.customer-image {
+    width: 1.875em;
+    height: 1.875em;
+    border-radius: 50%;
+    margin-right: 0.625em;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.tooltip-header {
+    display: flex;
+    align-items: center;
+}
+
+.tooltip-rating {
+    margin-top: 0.3125em;
+}
+
+.tooltip-feedback {
+    margin-top: 0.3125em;
+}
+
+.review-rating {
+    margin: 0.3125em 0;
+}
+
+.review-text {
+    font-size: 0.875em;
+}
+
+/* Arrow styles */
+.down-arrow {
+    cursor: pointer;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 0.3125em solid transparent;
+    border-right: 0.3125em solid transparent;
+    border-top: 0.625em solid black;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when hovered */
+.down-arrow:hover {
+    transform: rotate(180deg);
+}
+
+
+.star {
+    cursor: pointer;
+    font-size: 1.25em;
+    margin-right: 0.3125em;
+    color: goldenrod;
+}
+
+.star:hover {
+    color: gold;
+}
+
+
+.star.empty {
+    color: #ccc;
+}
+
+.rating-number {
+    font-size: 0.9rem;
+    margin-left: 0.3125em;
+    color: #666;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    max-width: 100%;
+    text-align: center;
+}
+
+
+/* Reviews Section Styling */
+
+.reviews-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 1.25em;
+    width: 100%;
+    margin-bottom: 1.25em;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.9375em;
+    border: 0.0625em solid #ddd;
+    border-radius: 0.5em;
+    width: 15.625em;
+    background-color:whitesmoke;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.review:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.1);
+}
+
+.Allreviews-tooltip {
+    position: absolute;
+    bottom: 0.3125em;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.625em;
+    border-radius: 0.3125em;
+    box-shadow: 0 0.125em 0.625em rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    font-size: 0.8125em;
+}
+
+
+.review:hover .Allreviews-tooltip {
+    display: block;
+}
+
+
+
+.offer-row .review-tooltip .customer-image,
+.offer-row .Allreviews-tooltip .customer-image {
+    width: 1.875em; /* Set a smaller, fixed size */
+    height: 1.875em;
+    border-radius: 50%; /* Keep them circular */
+    margin-right: 0.625em; /* Add spacing */
+    object-fit: cover; /* Maintain aspect ratio without distortion */
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #888;
+    color: white;
+    padding: 1.25em;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 97%;
+    border-top: 0.0625em solid #444;
+    position: relative;
+    box-shadow: 0 -0.0625em 0.3125em rgba(0, 0, 0, 0.3);
+}
+
+/* Footer top section for links */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    max-width: 75.0em;
+    margin: 0 auto;
+    padding-bottom: 0.625em;
+    flex-wrap: wrap;
+}
+
+/* Footer column styling */
+.footer-column {
+    flex: 1;
+    margin: 0 1.25em;
+    min-width: 9.375em;
+}
+
+.footer-column:first-child {
+    margin-left: 12.5em;
+}
+
+.footer-column:last-child {
+    margin-right: 0;
+}
+
+/* Header style for each column */
+.footer-column h3 {
+    font-size: 1.125em;
+    color: white;
+    margin-bottom: 0.9375em;
+}
+
+/* Link styling within footer */
+.footer-column a {
+    color: #bbb;
+    text-decoration: none;
+    display: block;
+    margin: 0.3125em 0;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+/* Bottom section of the footer */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 0.0625em solid #333;
+    padding-top: 0.9375em;
+    width: calc(100% - 1.25em);
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3125em;
+}
+
+.footer-logo-img {
+    width: 3.125em;
+    margin-right: 0.625em;
+}
+
+.footer-bottom p {
+    color: #bbb;
+    font-size: 0.875em;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove bottom space under images */
+}/* Global Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.625em;
+    background-color: #f4f4f4; /* Background color for the nav */
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.25em;
+}
+
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 48.0em) {
+    .nav-links {
+        display: none; /* Hide links on small screens */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+
+    .nav-links.open {
+        display: flex; /* Show links when hamburger is clicked */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        background-color: #f4f4f4; /* Match nav background */
+        top: 3.75em; /* Position below the header */
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+}
+
+@media (max-width: 48.0em) {
+    .hamburger-menu {
+        display: block; /* Show hamburger menu for smaller screens */
+    }
+
+    .sidenav {
+        display: none; /* Hide sidebar by default on small screens */
+    }
+}
+
+
+@media (max-width: 48.0em) {
+    .offer-row {
+        flex-direction: column; /* Stack offers vertically */
+        align-items: center;
+    }
+    .search-input {
+        width: 80%; /* Shrink search bar for tablets */
+    }
+}
+
+@media (max-width: 30.0em) {
+    .footer {
+        text-align: center;
+    }
+    .offer {
+        width: 90%; /* Full width for offers on smaller screens */
+    }
+}
+
+
+
+
+
+/* Cart Page */
+
+#cart {
+    overflow-x: auto;
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart table img {
+    width: 70px;
+}
+
+#cart table td:nth-child(1) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart table td:nth-child(2) {
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(3) {
+    width: 250px;
+    text-align: center;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(5) input{
+    width: 70px;
+    padding: 10px 5px 10px 15px;
+}
+
+#cart table thead {
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right: none;
+}
+
+#cart table thead td {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px 0;
+}
+
+#cart table tbody tr td {
+    padding-top: 15px;
+}
+
+#cart table tbody td {
+    font-size: 13px;
+}
+
+#cart-add {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#cart-add .coupon {
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+#cart-add .coupon h3,
+#cart-add .subtotal h3 {
+    padding-bottom: 15px;
+}
+ 
+#cart-add .coupon input {
+    padding: 10px 20px;
+    outline: none;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #e2e9e1;
+}
+
+#cart-add .coupon button,
+#cart-add .subtotal button {
+    background-color: #088178;
+    color: #fff;
+    padding: 12px 20px;
+}
+
+#cart-add .subtotal {
+    width: 50%;
+    margin-bottom: 30px;
+    border: 1px solid #e2e9e1;
+    padding: 30px;
+}
+
+#cart-add .subtotal table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#cart-add .subtotal table td {
+    width: 50%;
+    border: 1px solid #e2e9e1;
+    padding: 10px;
+    font-size: 13px;
+}
+.float-right {
+    float: right;
+    margin-right: 15px;
+	margin-top: 10px;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+
+}
+
+button.normal {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+
+#page-header {
+	
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+#page-header h2,
+#page-header p {
+    color: #fff;
+	font-size: 30px;
+}
+
+#page-header.about-header {
+    background-image: url(images/pu.jpg);
+}
+/* checkout Page */
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Grouping Billing and Cart Sections */
+.checkout-group {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #e2e9e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the Table for Cart Totals */
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.order-table th, .order-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.order-img {
+    width: 80px;
+}
+
+/* Styling the Payment Methods */
+.payment-methods {
+    margin-top: 20px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-input {
+    margin-right: 10px;
+}
+
+
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+}
+
+.form-input {
+    width: 100%;  
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px; 
+}
+
+
+.textarea {
+    grid-column: span 2; 
+    width: 100%;
+    height: 150px; 
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 30px; 
+}
+
+.table-title {
+    font-size: 14px; 
+    font-weight: normal; 
+}
+
+
+.checkout-title {
+    grid-column: span 2; 
+    margin-bottom: 10px; 
+    margin-top: 20px;
+    text-align: left; 
+}
+
+/* confirmation page */
+/* Container for the confirmation message */
+.confirmation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Confirmation message styling */
+.confirmation-message {
+    max-width: 500px;
+    padding: 20px;
+	margin-top:100px;
+	box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.confirmation-message i {
+    font-size: 50px;
+    color: #4CAF50; /* Green color for success confirmation */
+    margin-bottom: 20px;
+}
+
+/* Styling for the main heading */
+.confirmation-message h1 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* Styling for the paragraph */
+.confirmation-message p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Styling for the button */
+.confirmation-message .button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #6a0dad;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the button */
+.confirmation-message .button:hover {
+    background-color: #5b0ca3; /* Darker color on hover */
+    transform: scale(1.05); 
+    
+}
+
+ .container {
+            margin: 20px;
+            margin-left: 300px; /* Left margin for alignment */
+        }
+
+        
+
+        .order {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .order h2 {
+            margin: 0;
+            padding: 5px;
+            background-color: #f1f1f1;
+        }
+
+        .products {
+            padding: 0.01vh;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .product img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .product-name {
+            flex: 1;
+        }
+
+        .rating-number {
+            width: 60px;
+            margin-left: 20px;
+        }
+
+        .product textarea {
+            width: 150px;
+            height: 50px;
+            margin-left: 20px;
+            resize: none; /* Prevent resizing of the textarea */
+        }
+
+        /* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+    margin-top: 6%;
+    margin-left: 290px;
+  }
+  
+  /* Display list items side by side */
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+  
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+  
+  /* Add a color to all links inside the list */
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+  
+  /* Add a color on mouse-over */
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid #000;
+}
+
+
+
+/* Category section */
+
+header .logo {
+    width: 150px;
+    height: 100px;
+    background-color: #ccc;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav div {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    margin-left: 300px; 
+}
+
+/* Category section */
+.category-section {
+    padding: 20px;
+    border-bottom: 2px solid #000;
+}
+
+.category-section h1 {
+    margin-bottom: 10px;
+}
+
+.sort-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-bar img {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+}
+
+/* Product Grid */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centers the products */
+    padding: 20px;
+}
+
+.product-item {
+    width: 250px; /* Set a fixed width for consistency */
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-item img {
+    width: 80%; /* Set the image width to 80% of its container */
+    height: auto; /* Maintain aspect ratio */
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: bold;
+}
+
+
+
+
+/* Order Page */
+
+.order-container {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.order-title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.order-details {
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #e2e9e1;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-table th,
+.order-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+.order-summary {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.order-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #088178;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #066a5d;
+    transform: scale(1.05);
+}
+
+
+
+
+
+ .product-name {
+    overflow-y: hidden; /* Add vertical scroll */
+    overflow-x: scroll; /* Hide horizontal scroll */
+}

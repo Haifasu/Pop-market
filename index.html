@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/icon" href="images/Logo.png">
+    <a href="cart.html">
+        <i class="fas fa-shopping-cart"></i>
+    </a>
+
+    <title>Pop Market</title>
+</head>
+
+<body>
+    <script src="homepage.js"></script>
+
+    <div class="top-header">
+        <div class="nav-left">
+            <a href="index.html">
+                <img src="images/Logo.png" alt="Logo" class="logo">
+            </a>
+            <span class="logo-text">Pop Market</span>
+        </div>
+        <div class="nav-center">
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+            </form>
+            <span class="current-week-date" id="current-week-date"></span>
+        </div>
+
+        <div class="nav-right">
+            <a href="CustomerDashboard.html" class="nav-link"><i class="fas fa-user"></i> User</a>
+            <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+        </div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+
+    <div class="sidenav">
+        <a href="index.html" target="_self"><i class="fas fa-home"></i> Home</a>
+        <!-- Categories with submenu -->
+        <div class="dropdown">
+            <a href="#categories" class="dropdown-btn"><i class="fas fa-list"></i> Categories</a>
+            <div class="dropdown-container">
+                <a href="ElectronicsPage.html">Electronics</a>
+                <a href="BooksPage.html">Books</a>
+                <a href="MusicPage.html">Music</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="mainseller.html" class="dropdown-btn"><i class="fas fa-user-tie"></i> Seller Dashboard</a>
+            <div class="dropdown-container">
+                <a href="addproduct.html">Add New Product</a>
+                <a href="Offers.html">Offers Settings</a>
+            </div>
+        </div>
+    </div>
+    <main>
+        <!-- Main content -->
+        <!-- Banner -->
+        <div class="banner">
+            <img src="images/banner.jpg" alt="Promotional Banner" class="banner-image">
+        </div>
+        <!-- Offers Section -->
+        <section class="offers-section">
+            <h1>Don't Miss Our Best Offers!!!</h1>
+
+            <div class="offer-row">
+                <div class="offer large-offer hover-effect" id="offer1">
+                    <img src="images/Instrumental1.png" alt="Offer 1 Image" class="offer-image">
+                    <p class="offer-description">Get top-quality instruments at unbeatable prices — perfect for
+                        all musicians!</p>
+                </div>
+
+                <div class="offer large-offer hover-effect" id="offer2">
+                    <img src="images/Instrumental2.png" alt="Offer 2 Image" class="offer-image">
+                    <p class="offer-description">Huge discounts on top-rated instruments. Limited time offer!
+                    </p>
+                </div>
+            </div>
+            <div class="offer-card-rectangle">
+                <img src="images/offer7.jpg" alt="Offer 6 Image" class="offer-image">
+            </div>
+
+            <div class="offer-row">
+                <div class="offer small-offer hover-effect">
+                    <img src="images/book1.jpg" alt="Offer 3 Image" class="offer-image">
+                    <div class="offer-name">The Thursday Murder Club</div>
+                    <div class="rating">
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star empty">&#9734;</span>
+                        <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                        <span class="rating-number"><small>(4.3/5)</small></span>
+                    </div>
+                    <p class="offer-description">A group of elderly friends at a retirement village...</p>
+
+                    <!-- Tooltip for reviews -->
+                    <div class="review-tooltip" style="display: none;">
+                        <div class="tooltip-header">
+                            <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                            <span class="customer-name">Emily Watson</span>
+                        </div>
+                        <div class="tooltip-rating">
+                            <span class="rating" style="color: gold;">★★★★☆</span>
+                        </div>
+                        <div class="tooltip-feedback" class="review-text">
+                            <span>A charming and suspenseful mystery with witty characters and a perfect blend of humor
+                                and intrigue.</span>
+                        </div>
+
+                        <div class="tooltip-header">
+                            <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                            <span class="customer-name">John Smith</span>
+                        </div>
+                        <div class="tooltip-rating">
+                            <span class="rating" style="color: gold;">★★★☆☆</span>
+                        </div>
+                        <div class="tooltip-feedback" class="review-text">
+                            <span>An interesting premise, but the pacing was slow, and the ending felt
+                                predictable.</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="offer small-offer hover-effect">
+                    <img src="images/book2.jpg" alt="Offer 4 Image" class="offer-image">
+                    <div class="offer-name">Harry Potter</div>
+                    <div class="rating">
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                        <span class="rating-number"><small>(5/5)</small></span>
+                    </div>
+                    <p class="offer-description">A young boy discovers he is a wizard...</p>
+
+                    <!-- Tooltip for reviews -->
+                    <div class="review-tooltip" style="display: none;">
+                        <div class="tooltip-header">
+                            <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                            <span class="customer-name">Daniel Radcliffe</span>
+                        </div>
+                        <div class="tooltip-rating">
+                            <span class="rating" style="color: gold;">★★★★★</span>
+                        </div>
+                        <div class="tooltip-feedback">A magical adventure with unforgettable characters and a
+                            captivating story.</div>
+
+                        <div class="tooltip-header">
+                            <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                            <span class="customer-name">Emma Grint</span>
+                        </div>
+                        <div class="tooltip-rating">
+                            <span class="rating" style="color: gold;">★★★☆☆</span>
+                        </div>
+                        <div class="tooltip-feedback">A fantastic journey into the wizarding world...</div>
+                    </div>
+                </div>
+
+
+                <div class="offer small-offer hover-effect">
+                    <img src="images/book3.jpg" alt="Offer 5 Image" class="offer-image">
+                    <div class="offer-name">The Great Gatsby</div>
+                    <div class="rating">
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                        <span class="rating-number"><small>(5/5)</small></span>
+                    </div>
+                    <p class="offer-description">Set in the Jazz Age, this novel explores the life of Jay Gatsby and his
+                        obsession with Daisy Buchanan, delving into themes of love, wealth, and the American Dream.</p>
+
+
+                    <!-- Tooltip for reviews -->
+                    <div class="review-tooltip" style="display: none;">
+                        <div class="tooltip-header">
+                            <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                            <span class="customer-name">Daisy Buchanan</span>
+                        </div>
+                        <div class="tooltip-rating">
+                            <span class="rating" style="color: gold;">★★★★★</span>
+                        </div>
+                        <div class="tooltip-feedback">A masterpiece that captures the glamour and heartbreak of the Jazz
+                            Age.</div>
+
+                        <div class="tooltip-header">
+                            <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                            <span class="customer-name">Nick Carraway</span>
+                        </div>
+                        <div class="tooltip-rating">
+                            <span class="rating" style="color: gold;">★★★★☆</span>
+                        </div>
+                        <div class="tooltip-feedback">A poignant tale of love, wealth, and the elusive American Dream.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="offer small-offer hover-effect">
+                    <img src="images/book4.jpg" alt="Offer 6 Image" class="offer-image">
+                    <div class="offer-name">Anna Karenina</div>
+                    <div class="rating">
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star filled">&#9733;</span>
+                        <span class="star empty">&#9734;</span>
+                        <span class="star empty">&#9734;</span>
+                        <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                        <span class="rating-number"><small>(3.5/5)</small></span>
+                    </div>
+                    <p class="offer-description">This classic Russian novel follows Anna, a woman trapped in a loveless
+                        marriage, who embarks on a passionate affair, leading to tragic consequences.</p>
+                    <!-- Tooltip for reviews -->
+                    <div class="review-tooltip" style="display: none;">
+                        <div class="tooltip-header">
+                            <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                            <span class="customer-name">Anna Sergeyevna</span>
+                        </div>
+                        <div class="tooltip-rating">
+                            <span class="rating" style="color: gold;">★★★★★</span>
+                        </div>
+                        <div class="tooltip-feedback">An emotionally rich narrative exploring love, betrayal, and the
+                            complexities of society.</div>
+
+                        <div class="tooltip-header">
+                            <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                            <span class="customer-name">Kate Levin</span>
+                        </div>
+                        <div class="tooltip-rating">
+                            <span class="rating" style="color: gold;">★★★★☆</span>
+                        </div>
+                        <div class="tooltip-feedback">A beautifully written epic with profound philosophical insights,
+                            though occasionally dense.</div>
+                    </div>
+
+                </div>
+
+                <!-- Hidden offers that will fade in -->
+                <div class="offer-row hidden-offers">
+                    <div class="offer small-offer hover-effect">
+                        <img src="images/book5.jpg" alt="Offer 6 Image" class="offer-image">
+                        <div class="offer-name">Wolverine</div>
+                        <div class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                            <span class="rating-number"><small>(4.3/5)</small></span>
+                        </div>
+                        <p class="offer-description">A member of the X-Men, Wolverine is a mutant with regenerative
+                            healing
+                            powers and retractable claws, struggling with his past while fighting for justice in a world
+                            that fears him. </p>
+                        <!-- Tooltip for reviews -->
+                        <div class="review-tooltip" style="display: none;">
+                            <div class="tooltip-header">
+                                <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Logan Howlett</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★★</span>
+                            </div>
+                            <div class="tooltip-feedback">An intense and gripping story of resilience, redemption, and
+                                the struggle for identity.</div>
+
+                            <div class="tooltip-header">
+                                <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Laura Kinney</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★☆</span>
+                            </div>
+                            <div class="tooltip-feedback">A gritty and emotional tale with unforgettable action and
+                                heartfelt moments.</div>
+                        </div>
+
+                    </div>
+
+                    <div class="offer small-offer hover-effect">
+                        <img src="images/book6.jpg" alt="Offer 6 Image" class="offer-image">
+                        <div class="offer-name">A Court of Wings and Ruin</div>
+                        <div class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                            <span class="rating-number"><small>(4.1/5)</small></span>
+                        </div>
+                        <p class="offer-description">The third book in Sarah J. Maas's A Court of Thorns and Roses
+                            series,
+                            this novel follows Feyre as she navigates political intrigue, battle, and her newfound
+                            powers in
+                            a war between the courts of the Fae.
+                        </p>
+                        <!-- Tooltip for reviews -->
+                        <div class="review-tooltip" style="display: none;">
+                            <div class="tooltip-header">
+                                <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Feyre Archeron</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★★</span>
+                            </div>
+                            <div class="tooltip-feedback">An epic conclusion filled with heart-pounding action,
+                                intricate politics, and emotional depth.</div>
+
+                            <div class="tooltip-header">
+                                <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Rhysand</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★☆</span>
+                            </div>
+                            <div class="tooltip-feedback">A captivating tale with stunning world-building, though
+                                slightly drawn-out at times.</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Offer 8 -->
+                    <div class="offer small-offer hover-effect">
+                        <img src="images/book7.jpg" alt="Offer 6 Image" class="offer-image">
+                        <div class="offer-name">It Ends with Us</div>
+                        <div class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                            <span class="rating-number"><small>(4.0/5)</small></span>
+                        </div>
+                        <p class="offer-description">A heart-wrenching romance novel by Colleen Hoover, it tells the
+                            story
+                            of Lily Bloom, who falls in love with a charming doctor while grappling with her traumatic
+                            past
+                            and difficult choices about love and domestic abuse.
+                        </p>
+                        <!-- Tooltip for reviews -->
+                        <div class="review-tooltip" style="display: none;">
+                            <div class="tooltip-header">
+                                <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Lily Bloom</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★★</span>
+                            </div>
+                            <div class="tooltip-feedback">A deeply moving story that portrays love, resilience, and
+                                difficult choices with raw honesty.</div>
+
+                            <div class="tooltip-header">
+                                <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Ryan Kincaid</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★☆☆</span>
+                            </div>
+                            <div class="tooltip-feedback">An emotional journey with powerful moments, though some
+                                character decisions felt frustrating.</div>
+                        </div>
+
+                    </div>
+
+                    <div class="offer small-offer hover-effect">
+                        <img src="images/book8.jpg" alt="Offer 6 Image" class="offer-image">
+                        <div class="offer-name">The Midnight Library</div>
+                        <div class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                            <span class="rating-number"><small>(3.5/5)</small></span>
+                        </div>
+                        <p class="offer-description">novel by Matt Haig, Nora Seed finds herself in a library between
+                            life
+                            and death, where each book offers a chance to explore different versions of her life,
+                            helping
+                            her find peace with the choices she’s made.
+                        </p>
+                        <!-- Tooltip for reviews -->
+                        <div class="review-tooltip" style="display: none;">
+                            <div class="tooltip-header">
+                                <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Sarah Johnson</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★☆</span>
+                            </div>
+                            <div class="tooltip-feedback">A thought-provoking exploration of life choices and regrets,
+                                with a touch of magical realism.</div>
+
+                            <div class="tooltip-header">
+                                <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Matt Haig</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★★</span>
+                            </div>
+                            <div class="tooltip-feedback">A beautifully written and imaginative novel that inspires
+                                reflection on what truly matters in life.</div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- This container holds the offers-->
+                    <div class="offer small-offer hover-effect">
+                        <img src="images/m1.jpg" alt="Offer 6 Image" class="offer-image">
+                        <div class="offer-name">Digital Piano</div>
+                        <div class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                            <span class="rating-number"><small>(4.5/5)</small></span>
+                        </div>
+                        <p class="offer-description">Digital piano with weighted keys, ideal for beginners and advanced
+                            players alike!</p>
+                        </p>
+                        <!-- Tooltip for reviews -->
+                        <div class="review-tooltip" style="display: none;">
+                            <div class="tooltip-header">
+                                <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Sophia White</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★★</span>
+                            </div>
+                            <div class="tooltip-feedback">An excellent digital piano with great sound quality and feel.
+                                Perfect for beginners and advanced players alike!</div>
+
+                            <div class="tooltip-header">
+                                <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Liam Turner</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★☆</span>
+                            </div>
+                            <div class="tooltip-feedback">A solid instrument with great features, though the keys feel
+                                slightly plastic. Still a great value for the price.</div>
+                        </div>
+
+                    </div>
+
+                    <div class="offer small-offer hover-effect">
+                        <img src="images/m2.jpg" alt="Offer 6 Image" class="offer-image">
+                        <div class="offer-name">Guitar</div>
+                        <div class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                            <span class="rating-number"><small>(3.5/5)</small></span>
+                        </div>
+                        <p class="offer-description">Experience rich, resonant sound and superior craftsmanship with our
+                            premium acoustic guitar. Perfect for players of all levels, it's built for both practice and
+                            performance.</p>
+
+
+                        <!-- Tooltip for reviews -->
+                        <div class="review-tooltip" style="display: none;">
+                            <div class="tooltip-header">
+                                <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Amelia Carter</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★★</span>
+                            </div>
+                            <div class="tooltip-feedback">This guitar is absolutely amazing! The sound quality is clear
+                                and rich, and it's perfect for both beginners and advanced players.</div>
+
+                            <div class="tooltip-header">
+                                <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Liam Brown</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★☆</span>
+                            </div>
+                            <div class="tooltip-feedback">The guitar's sound quality is disappointing, and it feels
+                                cheaply made. The strings are hard to tune, and the neck feels uncomfortable for
+                                extended play.</div>
+                        </div>
+
+                    </div>
+
+                    <div class="offer small-offer hover-effect">
+                        <img src="images/m3.jpg" alt="Offer 6 Image" class="offer-image">
+                        <div class="offer-name">Trumpets Beginner Advanced</div>
+                        <div class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                            <span class="rating-number"><small>(3.5/5)</small></span>
+                        </div>
+                        <p class="offer-description">Get your hands on top-quality trumpets, perfect for beginners and
+                            professionals alike. Experience exceptional sound and craftsmanship at great prices!</p>
+
+                        <!-- Tooltip for reviews -->
+                        <div class="review-tooltip" style="display: none;">
+                            <div class="tooltip-header">
+                                <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Anna Clark</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★★</span>
+                            </div>
+                            <div class="tooltip-feedback">This trumpet is fantastic for beginners! The sound is bright
+                                and easy to produce, making learning fun and engaging.</div>
+
+                            <div class="tooltip-header">
+                                <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">James Taylor</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★☆</span>
+                            </div>
+                            <div class="tooltip-feedback">Good quality trumpet, but I found the valves a bit stiff. It
+                                still produces a solid sound and is great for casual playing.</div>
+                        </div>
+
+                    </div>
+
+                    <div class="offer small-offer hover-effect">
+                        <img src="images/m6.jpg" alt="Offer 6 Image" class="offer-image">
+                        <div class="offer-name">Electric Drum Set</div>
+                        <div class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star empty">&#9734;</span>
+                            <span class="down-arrow" onclick="toggleReviews(event)"></span>
+                            <span class="rating-number"><small>(4.5/5)</small></span>
+                        </div>
+                        <p class="offer-description">Get a complete electronic drum set at 20% off—perfect for both
+                            beginners and advanced drummers looking to elevate their practice!</p>
+
+                        <div class="review-tooltip" style="display: none;">
+                            <div class="tooltip-header">
+                                <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Rachel Adams</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★★</span>
+                            </div>
+                            <div class="tooltip-feedback">The electronic drum set delivers fantastic sound quality with
+                                adjustable features. Perfect for practice and recording at home without disturbing
+                                others.</div>
+
+                            <div class="tooltip-header">
+                                <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">James Walker</span>
+                            </div>
+                            <div class="tooltip-rating">
+                                <span class="rating" style="color: gold;">★★★★☆</span>
+                            </div>
+                            <div class="tooltip-feedback">Great drum set with responsive pads, though I wish the hi-hat
+                                could be a bit more dynamic. Overall, a solid choice for electronic drumming.</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                   <!-- "View More" Button -->
+                   <div class="button-container">
+                    <button class="loadMoreBtn">View More</button>
+                </div>
+                
+
+                <div class="reviews-container">
+                    <div class="review" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <div class="review-content">
+                            <h3 class="offer-name">Electronic Drum Set</h3>
+                            <div class="rating" ><span style="color: gold;">★★★★☆</span></div>
+                            <p class="review-text">The sound quality is incredible. Highly recommend for beginners and pros!</p>
+                        </div>
+                        <!-- Tooltip content inside the same review container -->
+                        <div class="Allreviews-tooltip">
+                            <div class="tooltip-header">
+                                <img src="images/UserFemaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Sophia Green</span>
+                            </div>
+                            <div class="tooltip-rating"><span style="color: gold;">★★★★☆</span></div>
+                            <div class="tooltip-feedback">Great product! Highly recommend.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="review" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <div class="review-content">
+                            <h3 class="offer-name">Noise-Cancelling Headphones</h3>
+                            <div class="rating"><span style="color: gold;">★★★☆☆</span></div>
+                            <p class="review-text">Amazing noise cancellation and battery life. Perfect for travel!</p>
+                        </div>
+                        <!-- Tooltip content inside the same review container -->
+                        <div class="Allreviews-tooltip">
+                            <div class="tooltip-header">
+                                <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">John Doe</span>
+                            </div>
+                            <div class="tooltip-rating"><span style="color: gold;">★★★☆☆</span></div>
+                            <div class="tooltip-feedback">Decent quality but could be better.</div>
+                        </div>
+                    </div>
+
+                    <div class="review" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <div class="review-content">
+                            <h3 class="offer-name">Wireless Smart Speaker</h3>
+                            <div class="rating"><span style="color: gold;">★★★★☆</span></div>
+                            <p class="review-text">The speaker delivers exceptional sound clarity and connects seamlessly with multiple devices.</p>
+                        </div>
+                        <div class="Allreviews-tooltip">
+                            <div class="tooltip-header">
+                                <img src="images/UserMaleicon.png" alt="Customer" class="customer-image">
+                                <span class="customer-name">Alex Brown</span>
+                            </div>
+                            <div class="tooltip-rating"><span style="color: gold;">★★★★☆</span></div>
+                            <div class="tooltip-feedback">The smart assistant integration is a game-changer for daily tasks, though the battery life could be slightly better.</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+    </main>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>Get to Know Us</h3>
+                <a href="AboutUs.html">About Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Make Money with Us</h3>
+                <a href="mainseller.html">Sell on Pop Market</a>
+                <a href="#partners">Partner with Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Payment Methods</h3>
+                <a href="#credit-cards">Credit Cards</a>
+                <a href="#gift-cards">Gift Cards</a>
+                <a href="#pay">Payment Plans</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:support@popmarket.com">support@popmarket.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="images/Logo.png" alt="Logo" class="footer-logo-img">
+                <span class="logo-text">Pop Market</span>
+            </div>
+            <p>&copy; 2024 Pop Market. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.sidenav');
+            navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+
+</html>
